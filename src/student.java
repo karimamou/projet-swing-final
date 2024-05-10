@@ -37,23 +37,26 @@ public class student {
             
             
             
-            if(operation == 'u') {  //u for update
-                ps = con.prepareStatement("UPDATE student SET first_name = ?, last_name = ?, birthdate = ?, phone = ?, address = ? WHERE id = ?");
-               
-                ps.setString(1, fname);
-                ps.setString(2, lname); 
-                ps.setString(3, sex);
-                ps.setString(4, bdate);
-                ps.setString(5, phone);
-                ps.setString(6, address);
-//                ps.setInt(7, id);
-                
-                if(ps.executeUpdate() > 0) {
-                    JOptionPane.showMessageDialog(null, "New Student Updated");
-                }
-            
-            
-            } 
+            if (operation == 'u') {  // 'u' for update
+    try {
+        ps = con.prepareStatement("UPDATE student SET first_name = ?, last_name = ?, sex = ?, birthdate = ?, phone = ?, address = ? WHERE id = ?");
+        
+        // Set parameters
+        ps.setString(1, fname);
+        ps.setString(2, lname);
+        ps.setString(3, sex);
+        ps.setString(4, bdate);
+        ps.setString(5, phone);
+        ps.setString(6, address);
+        ps.setInt(7, id);  // Condition for the student's ID
+        
+        if (ps.executeUpdate() > 0) {
+            JOptionPane.showMessageDialog(null, "Student Updated");
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(student.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
             
             if(operation == 'd') {  //u for delete
                 ps = con.prepareStatement("DELETE FROM student WHERE id = ?");

@@ -22,7 +22,9 @@ import javax.swing.JOptionPane;
  * @author fatim
  */
 public class LoginForm extends javax.swing.JFrame {
-
+public String getUsername() {
+    return jTextField_Username.getText();
+}
     public LoginForm() {
          this.setUndecorated(true);
 

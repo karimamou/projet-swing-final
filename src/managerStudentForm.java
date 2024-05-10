@@ -345,29 +345,29 @@ public class managerStudentForm extends javax.swing.JFrame {
     
 //    and here
     private void jButtonEditStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditStudentActionPerformed
-        String fname = jTextField_FName.getText();
-        String lname = jTextField_LName.getText();
-        String phone = jTextField_Phone.getText();
-        String address = jTextArea_Address.getText();
-        int id = Integer.valueOf(jTextField_STD_ID.getText());
-      String sex ="";
-        if(jRadioButtonFemale.isSelected()){
-            sex = "Female";
-        }else if(jRadioButtonFemale.isSelected()){
-         sex = "Male";
-        }
-        if(verifText()){
+       String fname = jTextField_FName.getText();
+    String lname = jTextField_LName.getText();
+    String phone = jTextField_Phone.getText();
+    String address = jTextArea_Address.getText();
+    int id = Integer.valueOf(jTextField_STD_ID.getText());
+    String sex = "";
+    if (jRadioButtonFemale.isSelected()) {
+        sex = "Female";
+    } else if (jRadioButtonMale.isSelected()) { // Corrected this line
+        sex = "Male";
+    }
+    if (verifText()) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String bdate = dateFormat.format(jDateChooserBirthDate.getDate());
 
         student std = new student();
-        
-        
+
         std.insertUpdateDeleteStudent('u', id, fname, lname, sex, bdate, phone, address);
         
+    } 
     }//GEN-LAST:event_jButtonEditStudentActionPerformed
 
-    }
+    
     
 //    here
     private void jButtonRemoveStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoveStudentActionPerformed
@@ -378,7 +378,7 @@ public class managerStudentForm extends javax.swing.JFrame {
         }else{
        
         int id = Integer.valueOf(jTextField_STD_ID.getText());
-        std.insertUpdateDeleteStudent('d', null, null, null, null, null, null, null);
+        std.insertUpdateDeleteStudent('d', id, null, null, null, null, null, null);
         std.filleStudentTable(jTable1, "");
         // blassa dyal student count
         
@@ -520,6 +520,7 @@ public class managerStudentForm extends javax.swing.JFrame {
         mf.pack();
         mf.setLocationRelativeTo(null);
         mf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
         mf.lblStdCount.setText("The Total Number of Students is :"+Integer.toString(MyFunction.countData("student")));
                 mf.lblCCount.setText("The Total Number of Courses is :"+Integer.toString(MyFunction.countData("course")));
         this.dispose();

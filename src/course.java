@@ -42,7 +42,8 @@ public class course {
             }
         
         
-        if(operation=='u'){
+    }
+         if(operation=='u'){
     try {
         ps = con.prepareStatement("UPDATE `course` SET `label`=? ,`hours_number`=? WHERE `id`=?");
         ps.setString(1, label);
@@ -56,8 +57,6 @@ public class course {
         Logger.getLogger(course.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
-
-    }
     }
     
    public boolean isCourseExist(String courseName){

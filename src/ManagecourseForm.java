@@ -20,7 +20,8 @@ import javax.swing.table.JTableHeader;
  * @author fatim
  */
 public class ManagecourseForm extends javax.swing.JFrame {
-
+LoginForm loginForm=new LoginForm();
+String username =loginForm.getUsername();
     course c=new course();
     public ManagecourseForm() {
          this.setUndecorated(true);
@@ -293,6 +294,7 @@ mf.setVisible(true);
 mf.pack();
 mf.setLocationRelativeTo(null);
 mf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+mf.lblusername.setText("Welcome admin "+loginForm.getUsername()+" !");
 mf.lblStdCount.setText("The Total Number of Students is :"+Integer.toString(MyFunction.countData("student")));
                 mf.lblCCount.setText("The Total Number of Courses is :"+Integer.toString(MyFunction.countData("course")));
 this.dispose();

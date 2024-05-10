@@ -269,6 +269,7 @@ public class AddStudent extends javax.swing.JFrame {
         mf.pack();
         mf.setLocationRelativeTo(null);
         mf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
         mf.lblStdCount.setText("The Total Number of Students is :"+Integer.toString(MyFunction.countData("student")));
                 mf.lblCCount.setText("The Total Number of Courses is :"+Integer.toString(MyFunction.countData("course")));
         this.dispose();

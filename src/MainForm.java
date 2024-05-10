@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author fatim
+ * Essaie de changement
  */
 public class MainForm extends javax.swing.JFrame {
 
@@ -248,7 +248,7 @@ jLabel1.setForeground(Color.white);
     }else if("Add course".equals(selectedOption)){
     AddCourseFor acf = new  AddCourseFor();
         acf.setVisible(true);
-       acf.pack();
+       acf.pack(); 
         acf.setLocationRelativeTo(null);
        acf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
        this.dispose();

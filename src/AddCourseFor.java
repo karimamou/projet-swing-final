@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author fatim
  */
 public class AddCourseFor extends javax.swing.JFrame {
+     
 course c=new course();
     /**
      * Creates new form AddCourseFor
@@ -217,6 +218,7 @@ course c=new course();
         mf.pack();
         mf.setLocationRelativeTo(null);
         mf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+         
         mf.lblStdCount.setText("The Total Number of Students is :"+Integer.toString(MyFunction.countData("student")));
                 mf.lblCCount.setText("The Total Number of Courses is :"+Integer.toString(MyFunction.countData("course")));
         this.dispose();
