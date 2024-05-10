@@ -17,7 +17,7 @@ import javax.swing.table.JTableHeader;
 
 /**
  *
- * @author fatim
+ * Essaie de changement de code
  */
 public class ManagecourseForm extends javax.swing.JFrame {
 LoginForm loginForm=new LoginForm();
